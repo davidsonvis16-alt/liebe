@@ -1,1126 +1,265 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liebe & Roses | Luxury Floral Atelier & Bespoke Builder</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fcfbfa;
-        }
-        .font-serif {
-            font-family: 'Cormorant Garamond', serif;
-        }
-        /* Custom Scrollbar for Luxury Experience */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #fcfbfa;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #e2d8d5;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #982c42;
-        }
-        /* Premium Glow Animations */
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 0.2; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(1.08); }
-        }
-        .animate-pulse-slow {
-            animation: pulse-slow 8s infinite ease-in-out;
-        }
-        /* Elegant Glassmorphism */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        /* Product Card Image Hover Zoom */
-        .img-zoom {
-            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .card-hover:hover .img-zoom {
-            transform: scale(1.06);
-        }
-    </style>
-</head>
-<body class="text-stone-800 antialiased overflow-x-hidden" id="app-root">
-
-    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div class="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-rose-100/30 blur-[120px] animate-pulse-slow"></div>
-        <div class="absolute bottom-[20%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-amber-50/40 blur-[100px] animate-pulse-slow" style="animation-delay: 3s;"></div>
-    </div>
-
-    <div class="relative z-50 bg-stone-950 text-stone-200 text-[11px] tracking-[0.2em] uppercase font-medium py-2.5 px-4 text-center border-b border-stone-800/60 flex items-center justify-center gap-3">
-        <span class="inline-block w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping"></span>
-        <span>Fresh Couture stems arriving daily • Complimentary handwritten calligraphy card with every order</span>
-    </div>
-
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-stone-100 shadow-xs transition-all duration-300">
-        <div class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
-            
-            <a href="#" class="flex items-center gap-3 sm:gap-4 group">
-                <div class="h-11 w-11 sm:h-14 sm:w-14 rounded-full bg-gradient-to-tr from-stone-900 via-rose-950 to-rose-900 flex items-center justify-center text-stone-100 shadow-md relative overflow-hidden">
-                    <span class="font-serif text-xl sm:text-2xl tracking-tighter font-semibold z-10">L</span>
-                    <div class="absolute inset-0 bg-gradient-to-b from-rose-800 to-rose-950 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                <div>
-                    <h1 class="text-xl sm:text-3xl font-serif font-bold tracking-wide text-stone-900 group-hover:text-rose-950 transition-colors">
-                        Liebe & Roses
-                    </h1>
-                    <p class="text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-stone-400 font-semibold mt-0.5">High Floral Artistry</p>
-                </div>
-            </a>
-
-            <nav class="hidden xl:flex items-center gap-10 font-medium text-xs tracking-widest uppercase text-stone-600">
-                <a href="#lookbook" class="hover:text-rose-900 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-rose-900 hover:after:w-full after:transition-all">The Lookbook Collection</a>
-                <a href="#atelier" class="hover:text-rose-900 transition-colors flex items-center gap-2 text-rose-950 font-semibold">
-                    <i class="fa-solid fa-wand-magic-sparkles text-rose-700 animate-pulse"></i> Custom Bouquet Lab
-                </a>
-                <a href="#location" class="hover:text-rose-900 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-rose-900 hover:after:w-full after:transition-all">Flagship Boutique</a>
-                <a href="#support" class="hover:text-rose-900 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-rose-900 hover:after:w-full after:transition-all">Concierge Desk</a>
-            </nav>
-
-            <div class="flex items-center gap-3 sm:gap-6">
-                <a href="https://instagram.com/liebe_roses" target="_blank" class="p-2 text-stone-400 hover:text-rose-700 transition-colors text-lg hidden sm:inline-block" title="Follow our Canvas">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="tel:+254726201738" class="p-2 text-stone-400 hover:text-stone-900 transition-colors text-lg hidden md:inline-block" title="Call Concierge">
-                    <i class="fa-solid fa-phone-volume"></i>
-                </a>
-                
-                <button onclick="toggleCartDrawer(true)" class="relative px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-stone-900 text-white hover:bg-rose-950 transition-all flex items-center gap-2 sm:gap-3 group shadow-md shadow-stone-900/10 cursor-pointer">
-                    <i class="fa-solid fa-bag-shopping text-xs group-hover:scale-110 transition-transform"></i>
-                    <span class="text-xs uppercase font-semibold tracking-wider hidden sm:inline">Your Vault</span>
-                    <span id="header-cart-badge" class="bg-rose-600 text-white text-[9px] font-black rounded-full h-5 w-5 flex items-center justify-center border border-stone-900 shadow-xs">0</span>
-                </button>
-
-                <button onclick="toggleMobileNav(true)" class="xl:hidden p-2 text-stone-700 hover:bg-stone-100 rounded-xl transition-colors cursor-pointer">
-                    <i class="fa-solid fa-bars-staggered text-xl"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <div id="mobile-nav" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-all duration-300">
-        <div onclick="toggleMobileNav(false)" class="absolute inset-0 bg-stone-900/40 backdrop-blur-xs"></div>
-        <div class="absolute inset-y-0 right-0 w-full max-w-sm bg-white p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 shadow-2xl">
-            <div class="space-y-8">
-                <div class="flex items-center justify-between border-b border-stone-100 pb-6">
-                    <span class="font-serif font-bold text-xl text-stone-900">Explore Liebe & Roses</span>
-                    <button onclick="toggleMobileNav(false)" class="text-stone-400 hover:text-stone-900 text-lg cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                <nav class="flex flex-col gap-6 text-sm uppercase tracking-widest font-semibold text-stone-600">
-                    <a href="#lookbook" onclick="toggleMobileNav(false)" class="hover:text-rose-900 flex items-center gap-3"><i class="fa-solid fa-images text-stone-400 w-5"></i> Lookbook Collection</a>
-                    <a href="#atelier" onclick="toggleMobileNav(false)" class="hover:text-rose-900 flex items-center gap-3 text-rose-950"><i class="fa-solid fa-wand-magic-sparkles text-rose-700 w-5"></i> Custom Bouquet Lab</a>
-                    <a href="#location" onclick="toggleMobileNav(false)" class="hover:text-rose-900 flex items-center gap-3"><i class="fa-solid fa-map-location-dot text-stone-400 w-5"></i> Flagship Boutique</a>
-                    <a href="#support" onclick="toggleMobileNav(false)" class="hover:text-rose-900 flex items-center gap-3"><i class="fa-solid fa-headset text-stone-400 w-5"></i> Concierge Desk</a>
-                </nav>
-            </div>
-            <div class="border-t border-stone-100 pt-8 space-y-4 font-mono text-xs text-stone-500">
-                <p class="uppercase text-[10px] tracking-wider text-stone-400 font-bold">Direct Line Operators</p>
-                <a href="tel:+254726201738" class="flex items-center gap-3 hover:text-rose-900 text-stone-800"><i class="fa-solid fa-phone text-rose-700"></i> +254 726 201738</a>
-                <a href="tel:+254717315599" class="flex items-center gap-3 hover:text-rose-900 text-stone-800"><i class="fa-solid fa-phone text-rose-700"></i> +254 717 315599</a>
-            </div>
-        </div>
-    </div>
-
-    <section class="relative overflow-hidden pt-8 pb-20 lg:py-24 xl:py-32 border-b border-stone-100">
-        <div class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
-            
-            <div class="lg:col-span-6 space-y-8 text-center lg:text-left order-2 lg:order-1">
-                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold bg-rose-50 text-rose-900 border border-rose-100/60 mx-auto lg:mx-0">
-                    <i class="fa-solid fa-crown text-rose-600 animate-pulse"></i> Haute Couture Floristry
-                </div>
-                
-                <h2 class="text-3xl sm:text-6xl xl:text-7xl font-serif font-bold tracking-tight text-stone-900 leading-[1.15] lg:leading-[1.08]">
-                    Poetry In Stems,<br>
-                    <span class="bg-gradient-to-r from-stone-950 via-rose-900 to-amber-800 bg-clip-text text-transparent italic">
-                        Sculpted For Emotion.
-                    </span>
-                </h2>
-                
-                <p class="text-sm sm:text-base xl:text-lg text-stone-500 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-                    Every arrangement from Liebe & Roses is a masterpiece of balance, texture, and deep romance. Handcrafted in Nairobi and encased in luxury wraps, we design experiences that standard bouquets can only dream of.
-                </p>
-                
-                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-5">
-                    <a href="#lookbook" class="w-full sm:w-auto px-8 py-4.5 sm:px-10 sm:py-5 bg-stone-900 hover:bg-rose-950 text-white font-medium text-xs uppercase tracking-widest rounded-full shadow-xl shadow-stone-950/10 hover:shadow-rose-950/20 transition-all flex items-center justify-center gap-3 group">
-                        <span>Explore Shopping Wall</span>
-                        <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <a href="#atelier" class="w-full sm:w-auto px-8 py-4.5 sm:px-10 sm:py-5 bg-white hover:bg-stone-50 text-stone-800 font-medium text-xs uppercase tracking-widest rounded-full border border-stone-200 shadow-xs transition-all flex items-center justify-center gap-3">
-                        <span>Enter Artisan Lab</span>
-                    </a>
-                </div>
-
-                <div class="pt-6 sm:pt-10 grid grid-cols-3 gap-4 sm:gap-6 max-w-md mx-auto lg:mx-0 border-t border-stone-200/60">
-                    <div>
-                        <p class="text-2xl sm:text-3xl font-serif font-semibold text-rose-950">20+</p>
-                        <p class="text-[8px] sm:text-[9px] text-stone-400 font-bold uppercase tracking-widest mt-1">Signature Layouts</p>
-                    </div>
-                    <div>
-                        <p class="text-2xl sm:text-3xl font-serif font-semibold text-rose-950">Fresh</p>
-                        <p class="text-[8px] sm:text-[9px] text-stone-400 font-bold uppercase tracking-widest mt-1">Stems Daily</p>
-                    </div>
-                    <div>
-                        <p class="text-2xl sm:text-3xl font-serif font-semibold text-rose-950">100%</p>
-                        <p class="text-[8px] sm:text-[9px] text-stone-400 font-bold uppercase tracking-widest mt-1">Bespoke Design</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:col-span-6 order-1 lg:order-2">
-                <div class="relative mx-auto max-w-md lg:max-w-none">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-rose-950 to-pink-900 rounded-[2rem] sm:rounded-[2.5rem] transform rotate-2 scale-98 opacity-5 shadow-2xl"></div>
-                    
-                    <div class="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-[6px] border-white bg-white group">
-                        <img src="https://images.unsplash.com/photo-1587334206574-351ecdb7babf?auto=format&fit=crop&w=1200&q=80" alt="Liebe Premium Crimson Arrangement Hero Wrapper" class="w-full h-[320px] sm:h-[540px] object-cover object-center transform group-hover:scale-105 transition-transform duration-1000">
-                        <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent flex flex-col justify-end p-6 sm:p-10 text-white">
-                            <span class="text-[8px] sm:text-[9px] font-mono tracking-[0.3em] uppercase bg-rose-700 text-white w-max px-2.5 py-1 rounded-sm font-semibold mb-2.5">Atelier Masterpiece</span>
-                            <h4 class="text-xl sm:text-2xl tracking-wide font-serif font-medium">Crimson Romance Arrangement</h4>
-                            <p class="text-[11px] sm:text-xs text-rose-100/80 font-light mt-1">Wrapped in Signature Velvet Black & Linen Wraps</p>
-                        </div>
-                    </div>
-
-                    <div class="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-5 shadow-xl border border-stone-100 flex items-center gap-3 sm:gap-4 animate-bounce" style="animation-duration: 4s;">
-                        <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-lg sm:rounded-xl bg-rose-50 text-rose-800 flex items-center justify-center text-base sm:text-lg">
-                            <i class="fa-solid fa-truck-ramp-box"></i>
-                        </div>
-                        <div>
-                          <p class="text-[11px] sm:text-xs font-bold text-stone-900">Immediate Dispatch</p>
-                          <p class="text-[9px] sm:text-[10px] text-stone-400 font-mono mt-0.5">Across Nairobi & Suburbs</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <main id="lookbook" class="py-16 sm:py-24 max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 xl:grid-cols-12 gap-8 sm:gap-12 items-start relative z-10">
-        
-        <div class="xl:col-span-8 space-y-8 sm:space-y-10">
-            
-            <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-stone-100 shadow-xs space-y-6">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                    <div>
-                        <h3 class="text-[9px] sm:text-[10px] font-mono tracking-[0.25em] uppercase text-rose-700 font-bold">Interactive Catalog</h3>
-                        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mt-0.5">The Gifting Wall</h2>
-                    </div>
-                    <div class="text-stone-400 text-[11px] sm:text-xs font-medium">
-                        Showing <span id="filtered-count" class="text-stone-900 font-bold">20</span> of 20 Exquisite Formations
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3.5">
-                    <div class="sm:col-span-5 relative">
-                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 text-xs"></i>
-                        <input 
-                            type="text" 
-                            id="search-input"
-                            oninput="filterCatalog()"
-                            placeholder="Search by bouquet name, color, or vibe..." 
-                            class="w-full pl-11 pr-4 py-3 sm:py-3.5 bg-stone-50 rounded-xl border border-stone-200/70 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-rose-800/20 focus:border-rose-900 transition-all placeholder:text-stone-400"
-                        >
-                    </div>
-
-                    <div class="sm:col-span-4 relative">
-                        <i class="fa-solid fa-layer-group absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 text-xs"></i>
-                        <select 
-                            id="category-filter"
-                            onchange="filterCatalog()"
-                            class="w-full pl-11 pr-10 py-3 sm:py-3.5 bg-stone-50 rounded-xl border border-stone-200/70 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-rose-800/20 focus:border-rose-900 transition-all text-stone-600 appearance-none cursor-pointer"
-                        >
-                            <option value="All">All Categories Collection</option>
-                            <option value="Signature Roses">Signature Roses Collection</option>
-                            <option value="Mixed Curations">Mixed Premium Curations</option>
-                            <option value="Luxury Boxes">Velvet Box Collection</option>
-                            <option value="Gifts Stems">Curated Add-On Gifts</option>
-                        </select>
-                        <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 text-[10px] pointer-events-none"></i>
-                    </div>
-
-                    <div class="sm:col-span-3 relative">
-                        <i class="fa-solid fa-arrow-up-wide-short absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 text-xs"></i>
-                        <select 
-                            id="sort-filter"
-                            onchange="filterCatalog()"
-                            class="w-full pl-11 pr-10 py-3 sm:py-3.5 bg-stone-50 rounded-xl border border-stone-200/70 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-rose-800/20 focus:border-rose-900 transition-all text-stone-600 appearance-none cursor-pointer"
-                        >
-                            <option value="default">Default Sequence</option>
-                            <option value="price-asc">Price: Low to High</option>
-                            <option value="price-desc">Price: High to Low</option>
-                            <option value="rating">Popularity & Rating</option>
-                        </select>
-                        <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 text-[10px] pointer-events-none"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div id="catalog-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-            </div>
-
-            <div id="catalog-empty-slate" class="hidden text-center py-24 bg-white border border-stone-100 rounded-3xl space-y-4">
-                <div class="h-16 w-16 bg-stone-50 text-stone-300 rounded-full flex items-center justify-center mx-auto text-xl"><i class="fa-solid fa-filter-circle-xmark"></i></div>
-                <h3 class="text-sm font-bold text-stone-800">No Floral Formations Match Your Search</h3>
-                <p class="text-xs text-stone-400 max-w-xs mx-auto">Try re-adjusting your spellcheck metrics or reset categories to browse our primary 20 luxury designs.</p>
-                <button onclick="resetFilters()" class="px-5 py-2 text-xs font-bold bg-stone-900 text-white rounded-lg hover:bg-rose-950 transition-colors cursor-pointer">Reset Search Matrix</button>
-            </div>
-        </div>
-
-        <aside class="xl:col-span-4 sticky top-32 space-y-6">
-            
-            <div class="bg-stone-950 text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl border border-stone-800 relative overflow-hidden">
-                <div class="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-                
-                <div class="relative z-10 space-y-6">
-                    <div class="flex items-center justify-between border-b border-stone-800 pb-4">
-                        <div>
-                            <h4 id="calc-state-badge" class="text-[9px] font-mono uppercase tracking-[0.2em] text-rose-400 font-bold flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Accounting Engine Active
-                            </h4>
-                            <h3 class="text-lg sm:text-xl font-serif font-semibold text-stone-100 mt-1">Real-Time Checkout Desk</h3>
-                        </div>
-                        <i class="fa-solid fa-calculator text-stone-700 text-xl"></i>
-                    </div>
-
-                    <div id="calc-ledger-stack" class="space-y-3 max-h-48 overflow-y-auto pr-1 text-xs text-stone-400">
-                    </div>
-
-                    <div class="bg-stone-900/60 border border-stone-800 rounded-2xl p-4 sm:p-5 flex items-center justify-between">
-                        <div>
-                            <p class="text-[9px] text-stone-500 uppercase tracking-widest font-bold">Aggregate Final Total</p>
-                            <p class="text-[11px] sm:text-xs text-stone-400 font-medium mt-0.5">VAT & Assembly Included</p>
-                        </div>
-                        <div class="text-right">
-                            <span class="text-xl sm:text-3xl font-mono font-black text-rose-400 block" id="calc-grand-total">KSH 0</span>
-                        </div>
-                    </div>
-
-                    <button 
-                        type="button" 
-                        onclick="processWhatsAppCheckout()" 
-                        id="checkout-action-btn"
-                        disabled
-                        class="w-full py-3.5 px-5 sm:py-4 sm:px-6 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 disabled:from-stone-900 disabled:to-stone-900 disabled:text-stone-700 disabled:border-stone-800 disabled:cursor-not-allowed text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-lg flex items-center justify-center gap-3 border border-transparent cursor-pointer"
-                    >
-                        <i class="fa-brands fa-whatsapp text-sm"></i>
-                        <span>Compile Order to WhatsApp</span>
-                    </button>
-
-                    <div class="flex items-center justify-center gap-4 text-[10px] text-stone-500 pt-2 border-t border-stone-900">
-                        <span><i class="fa-solid fa-shield-halved text-rose-800/60 mr-1"></i> Secure Protocol</span>
-                        <span>•</span>
-                        <span><i class="fa-solid fa-arrows-rotate text-stone-600 mr-1"></i> Auto-Calculated</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-stone-100 shadow-xs space-y-6">
-                <div class="flex items-center justify-between border-b border-stone-100 pb-4">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-basket-shopping text-stone-400 text-xs sm:text-sm"></i>
-                        <h4 class="text-xs uppercase font-bold tracking-wider text-stone-800">Your Appended Items Basket</h4>
-                    </div>
-                    <span id="basket-count-badge" class="bg-stone-100 text-stone-800 px-2 py-0.5 rounded-full font-mono text-[11px] sm:text-xs font-bold">0 Items</span>
-                </div>
-
-                <div id="basket-items-container" class="space-y-4 max-h-72 overflow-y-auto pr-1">
-                </div>
-            </div>
-
-        </aside>
-    </main>
-
-    <section id="atelier" class="py-16 sm:py-24 bg-gradient-to-b from-stone-50 via-rose-50/20 to-white border-y border-stone-100/80 relative z-10">
-        <div class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
-            
-            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-pink-50 text-pink-900 border border-pink-200/50">
-                    <i class="fa-solid fa-vial text-pink-600 animate-pulse"></i> Custom Formulation Lab
-                </div>
-                <h2 class="text-2xl sm:text-4xl font-serif font-bold text-stone-900">Artisan Bouquet Builder Lab</h2>
-                <p class="text-xs sm:text-sm text-stone-500 leading-relaxed font-light">
-                    Take absolute creative dominance. Hand-select individual wholesale flower stems, designate specialized premium outer luxury paper styles, and instantly review pricing changes live in the calculation desk above.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start bg-white rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-10 lg:p-12 shadow-xl border border-stone-100">
-                
-                <div class="lg:col-span-7 space-y-8">
-                    
-                    <div>
-                        <h3 class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-5 flex items-center gap-3">
-                            <span class="h-6 w-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-[10px] font-mono">01</span>
-                            Designate Floral Stem Quantities
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                            <div id="stem-builder-injection-zone" class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 col-span-2">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-5 flex items-center gap-3">
-                            <span class="h-6 w-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-[10px] font-mono">02</span>
-                            Select Wrapping Foil & Premium Fabrics
-                        </h3>
-                        <div id="wrap-style-injection-zone" class="space-y-2.5">
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-3 flex items-center gap-3">
-                            <span class="h-6 w-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-[10px] font-mono">03</span>
-                            Complimentary Calligraphy Greeting Text
-                        </h3>
-                        <textarea 
-                            id="custom-card-text"
-                            rows="3" 
-                            placeholder="Type out instructions or message contents to be handwritten by our calligraphers onto premium textured cards..."
-                            class="w-full rounded-xl border border-stone-200 p-4 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-rose-800/20 focus:border-rose-900 bg-stone-50/40 placeholder:text-stone-400 transition-all"
-                        ></textarea>
-                    </div>
-
-                    <div class="pt-2">
-                        <button 
-                            type="button" 
-                            onclick="injectCustomArtisanBouquetToCart()"
-                            class="w-full sm:w-auto px-6 py-4 bg-rose-900 hover:bg-rose-950 text-white font-bold text-xs uppercase tracking-widest rounded-xl shadow-md shadow-rose-950/10 transition-all flex items-center justify-center gap-3 cursor-pointer"
-                        >
-                            <i class="fa-solid fa-puzzle-piece"></i>
-                            <span>Inject Custom Creation To Basket</span>
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="lg:col-span-5 bg-stone-900 text-stone-300 rounded-2xl p-5 sm:p-8 space-y-6 shadow-xl border border-stone-800">
-                    <div>
-                        <span class="text-[9px] font-mono uppercase tracking-[0.25em] text-rose-400 block font-bold">Blueprint Schema</span>
-                        <h3 class="text-lg sm:text-xl font-serif font-semibold text-white mt-1">Artisan Composition Specs</h3>
-                    </div>
-
-                    <div class="border-t border-b border-stone-800 py-5 space-y-3 max-h-56 overflow-y-auto pr-1 text-xs">
-                        <div id="blueprint-stems-manifest" class="space-y-2">
-                        </div>
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between pt-3 border-t border-stone-800/60 text-stone-400 gap-1">
-                            <span>Selected Paper Wrap Layer:</span>
-                            <span id="blueprint-wrap-label" class="text-white font-medium truncate max-w-full">None</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between bg-stone-950 p-4 rounded-xl border border-stone-800/80">
-                        <div>
-                            <p class="text-[9px] text-stone-500 uppercase tracking-widest font-bold">Lab Component Cost</p>
-                            <p class="text-base sm:text-lg font-mono font-black text-rose-400 mt-0.5" id="blueprint-total-label">KSH 0</p>
-                        </div>
-                        <div class="h-9 px-3 rounded bg-stone-900 text-stone-400 flex items-center justify-center font-mono text-[10px] font-bold border border-stone-800">
-                            Est Price
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <section id="location" class="py-16 sm:py-24 max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div class="bg-gradient-to-br from-stone-900 via-stone-950 to-rose-950 rounded-[2rem] sm:rounded-[3rem] overflow-hidden text-white shadow-2xl grid grid-cols-1 lg:grid-cols-12 border border-stone-800">
-            
-            <div class="p-6 sm:p-12 lg:p-16 xl:p-20 lg:col-span-7 flex flex-col justify-center space-y-6">
-                <span class="text-[10px] font-mono tracking-[0.3em] text-pink-400 font-bold uppercase block">Flagship Retail Salon</span>
-                <h2 class="text-2xl sm:text-4xl font-serif font-bold tracking-wide">Find Us In Embakasi</h2>
-                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-xl font-light">
-                    Immerse yourself directly into our aromatic universe. Our physical flagship boutique is located along Embakasi Road, directly opposite the Pride Center and comfortably adjacent to the Quickmart supermarket hub. Drop by to examine individual stems or work with an on-site supervisor for event planning.
-                </p>
-
-                <div class="space-y-4 pt-4 border-t border-stone-800/80">
-                    <div class="flex items-start gap-3 sm:gap-4">
-                        <div class="h-9 w-9 rounded-xl bg-stone-800 border border-stone-700 flex items-center justify-center text-rose-400 shrink-0"><i class="fa-solid fa-location-dot text-sm"></i></div>
-                        <div>
-                            <p class="text-xs font-bold text-white uppercase tracking-wider">Boutique Address Blueprint Location</p>
-                            <p class="text-xs text-stone-400 font-mono mt-0.5">Embakasi Road, Opposite Pride Center, Next to Quickmart, Nairobi, Kenya</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3 sm:gap-4">
-                        <div class="h-9 w-9 rounded-xl bg-stone-800 border border-stone-700 flex items-center justify-center text-rose-400 shrink-0"><i class="fa-solid fa-headset text-sm"></i></div>
-                        <div>
-                            <p class="text-xs font-bold text-white uppercase tracking-wider">Direct Concierge Telephone Matrix Handles</p>
-                            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-x-4 gap-y-1 text-xs text-stone-400 font-mono mt-0.5">
-                                <a href="tel:+254726201738" class="hover:text-pink-400 transition-colors">+254 726 201738</a>
-                                <a href="tel:+254717315599" class="hover:text-pink-400 transition-colors">+254 717 315599</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:col-span-5 bg-gradient-to-br from-rose-900 to-rose-990 p-6 sm:p-12 flex flex-col justify-between relative min-h-[300px] sm:min-h-[350px] border-t lg:border-t-0 lg:border-l border-stone-800/40">
-                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
-                
-                <div class="relative bg-stone-950/40 backdrop-blur-md rounded-2xl p-5 sm:p-8 border border-white/10 space-y-4 my-auto max-w-sm mx-auto shadow-xl">
-                    <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-pink-600 to-rose-600 text-white flex items-center justify-center shadow-lg"><i class="fa-solid fa-map-pinned"></i></div>
-                    <h4 class="font-serif font-medium text-base sm:text-lg text-white tracking-wide">Nairobi Metropolitan Hub</h4>
-                    <p class="text-[11px] sm:text-xs text-pink-100/70 leading-relaxed font-light">
-                        Our strategic proximity placement allows rapid fulfillment and delivery driver dispatch across all residential complexes, medical facilities, office blocks, and corporate hotels.
-                    </p>
-                    <div class="pt-1 flex items-center gap-2 text-xs font-bold text-pink-300">
-                        <span>Launch Digital Coordinate Map</span>
-                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer id="support" class="bg-stone-950 text-stone-400 text-xs pt-16 pb-12 border-t border-stone-900 relative z-10">
-        <div class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-stone-900">
-            
-            <div class="lg:col-span-4 space-y-5">
-                <div class="flex items-center gap-3">
-                    <div class="h-10 w-10 rounded-full bg-rose-700 flex items-center justify-center text-white font-serif font-bold text-lg shadow-md">L</div>
-                    <h3 class="font-serif font-bold text-xl text-white tracking-wide">Liebe & Roses</h3>
-                </div>
-                <p class="leading-relaxed text-stone-400 font-light max-w-sm">
-                    Luxury fresh-cut floral stems, masterfully configured bouquets, bespoke wrappers, and tailored interior landscaping designs deployed with pristine care across Kenya.
-                </p>
-                <div class="flex items-center gap-3 pt-1">
-                    <a href="https://instagram.com/liebe_roses" target="_blank" class="h-9 w-9 rounded-full bg-stone-900 border border-stone-800 text-stone-400 hover:bg-pink-700 hover:text-white hover:border-transparent transition-all flex items-center justify-center text-sm"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-
-            <div class="lg:col-span-3 space-y-4">
-                <h4 class="text-xs uppercase font-bold tracking-widest text-stone-200">Catalog Operations Matrix</h4>
-                <ul class="space-y-2.5 font-light">
-                    <li><a href="#lookbook" class="hover:text-white transition-colors">Premium Crimson Rose Assemblies</a></li>
-                    <li><a href="#lookbook" class="hover:text-white transition-colors">Pastel Soft Harmony Bunches</a></li>
-                    <li><a href="#lookbook" class="hover:text-white transition-colors">Elegance White Remembrance Boxes</a></li>
-                    <li><a href="#lookbook" class="hover:text-white transition-colors">Bespoke Structural Customizations</a></li>
-                </ul>
-            </div>
-
-            <div class="lg:col-span-2 space-y-4">
-                <h4 class="text-xs uppercase font-bold tracking-widest text-stone-200">Boutique Timings</h4>
-                <ul class="space-y-2.5 font-mono text-[11px] text-stone-400">
-                    <li>Monday - Saturday<br><span class="text-stone-500">07:00 AM - 07:00 PM</span></li>
-                    <li>Sunday Schedules<br><span class="text-stone-500">09:00 AM - 04:00 PM</span></li>
-                    <li>Nairobi Central Express</li>
-                </ul>
-            </div>
-
-            <div class="lg:col-span-3 space-y-4">
-                <h4 class="text-xs uppercase font-bold tracking-widest text-stone-200">Financial Verification</h4>
-                <p class="leading-relaxed font-light text-stone-400">
-                    All order allocations arranged on this digital showcase are automatically mapped into encrypted templates for verification via secure WhatsApp operator desks.
-                </p>
-                <div class="bg-stone-900 border border-stone-800 rounded-xl p-3.5 flex items-center gap-3 text-[10px] font-bold text-stone-300 uppercase tracking-wider">
-                    <i class="fa-solid fa-circle-check text-emerald-500 text-sm"></i>
-                    <span>M-Pesa / Mobile Money Secure Channels</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500 text-[11px] text-center sm:text-left">
-            <p>&copy; <span id="current-year-placeholder"></span> Liebe & Roses (Nairobi, Kenya). High-Luxury Floristry Architecture Portfolio.</p>
-            <p class="font-mono text-[10px] tracking-wider uppercase bg-stone-900 px-3 py-1 rounded border border-stone-800">Advanced Component Integration Layer</p>
-        </div>
-    </footer>
-
-    <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-all duration-300">
-        <div onclick="toggleCartDrawer(false)" class="absolute inset-0 bg-stone-950/60 backdrop-blur-xs"></div>
-        
-        <div class="absolute inset-y-0 right-0 w-full max-w-md bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300">
-            
-            <div class="p-5 bg-stone-50 border-b border-stone-100 flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-bag-shopping text-rose-950"></i>
-                    <h3 class="text-sm uppercase font-bold tracking-wider text-stone-900">Your Appended Vault</h3>
-                    <span id="drawer-cart-badge" class="bg-rose-100 text-rose-900 text-xs font-bold font-mono px-2 py-0.5 rounded-full">0</span>
-                </div>
-                <button onclick="toggleCartDrawer(false)" class="p-2 text-stone-400 hover:text-stone-900 text-sm cursor-pointer transition-colors">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <div id="drawer-items-container" class="flex-1 overflow-y-auto p-5 space-y-4 bg-stone-50/30">
-            </div>
-
-            <div class="p-5 bg-white border-t border-stone-100 space-y-4">
-                <div class="space-y-2 text-xs font-medium text-stone-500">
-                    <div class="flex justify-between">
-                        <span>Fulfillment Center Origin:</span>
-                        <span class="text-stone-800 font-semibold">Embakasi Main Atelier, NRB</span>
-                    </div>
-                    <div class="flex justify-between text-sm font-bold text-stone-900 pt-3 border-t border-stone-100">
-                        <span>Basket Subtotal Total:</span>
-                        <span id="drawer-grand-total" class="font-mono text-lg text-rose-900">KSH 0</span>
-                    </div>
-                </div>
-
-                <button 
-                    type="button" 
-                    onclick="processWhatsAppCheckout()" 
-                    id="drawer-checkout-btn"
-                    disabled
-                    class="w-full py-3.5 bg-stone-900 hover:bg-rose-950 disabled:bg-stone-100 disabled:text-stone-300 disabled:cursor-not-allowed text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
-                >
-                    <i class="fa-brands fa-whatsapp text-sm"></i>
-                    <span>Forward Secured Bill Bundle</span>
-                </button>
-                <p class="text-[10px] text-stone-400 text-center leading-normal">Inventory is strictly allocated for up to 30 minutes prior to manual verification check-in clearance thresholds.</p>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        const CATALOG_PRODUCTS = [
-            { id: "lb-01", name: "Crimson Romance Luxury Arrangement", price: 4500, category: "Signature Roses", rating: 5.0, image: "https://images.unsplash.com/photo-1587334206574-351ecdb7babf?auto=format&fit=crop&w=600&q=80", tags: ["Best Seller", "Velvet"], desc: "Premium deep red Ecuadorian roses wrapped inside pristine signature dual-tone midnight structured sheets." },
-            { id: "lb-02", name: "Sunset Twilight Harmony Fusion", price: 4800, category: "Mixed Curations", rating: 4.9, image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80", tags: ["Vibrant"], desc: "Fiery orange spray roses combined beautifully alongside deep purple statice clusters and premium standard stems." },
-            { id: "lb-03", name: "Pure Reverence White Cloud Display", price: 5200, category: "Signature Roses", rating: 4.8, image: "https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=600&q=80", tags: ["Elegant"], desc: "Ethereal cloud arrangement of architectural avalanche white roses, embodying absolute pristine honor and grace." },
-            { id: "lb-04", name: "Sunshine Radiance Citrus Bouquet", price: 3800, category: "Mixed Curations", rating: 4.7, image: "https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80", tags: ["Bright Joy"], desc: "Vibrant canary yellow standard roses contrasted expertly against baby’s breath lace fillers and fresh eucalyptus leafy layers." },
-            { id: "lb-05", name: "The Majestic Royal Velvet Sphere", price: 7500, category: "Luxury Boxes", rating: 5.0, image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80", tags: ["Premium Box"], desc: "Over 35 select long-stem crimson roses arrayed mathematically inside a luxurious, heavy-stock suede round container chest." },
-            { id: "lb-06", name: "Blushing Pastels Lavender Bundle", price: 4200, category: "Mixed Curations", rating: 4.9, image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80", tags: ["Classic"], desc: "An delicate assortment of soft mauve roses, peach carnation blooms, and baby-pink baby’s breath cloud structures." },
-            { id: "lb-07", name: "Midnight Sapphire Infused Presentation", price: 5500, category: "Signature Roses", rating: 4.6, image: "https://images.unsplash.com/photo-1587334206574-351ecdb7babf?auto=format&fit=crop&w=600&q=80", tags: ["Exotic Tint"], desc: "Architectural indigo-tinted statement rose collections enveloped cleanly within crisp, high-density alabaster paper styling wraps." },
-            { id: "lb-08", name: "Elegance Orchid Pearl Cylinder Box", price: 8200, category: "Luxury Boxes", rating: 5.0, image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80", tags: ["VVIP Tier"], desc: "Exquisite cymbidium orchid crowns paired with blush-toned standard roses inside an embossed matte white water-retaining structural box." },
-            { id: "lb-09", name: "Wild Meadow Premium Botanical Assortment", price: 3900, category: "Mixed Curations", rating: 4.7, image: "https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80", tags: ["Boho Chic"], desc: "An organic rustic combination of striking sunflowers, long hypericum berry branches, and textural silver dollar greenery stems." },
-            { id: "lb-10", name: "Peony Infused Sweetheart Presentation", price: 6800, category: "Mixed Curations", rating: 4.9, image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80", tags: ["Seasonal"], desc: "Soft, pillow-like premium pink peony stems framed by standard sweetheart roses and crisp white mesh border liners." },
-            { id: "lb-11", name: "Scarlet Glow Accent Box Arrangement", price: 4900, category: "Luxury Boxes", rating: 4.8, image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80", tags: ["Sleek Cube"], desc: "Compact geometric display of hyper-saturated ruby red stems locked into an absolute minimalist charcoal square base structure." },
-            { id: "lb-12", name: "Golden Aura Luxury Metallic Display", price: 6200, category: "Signature Roses", rating: 5.0, image: "https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=600&q=80", tags: ["Gilded Tier"], desc: "Premium yellow rose varieties interspersed with gold-leaf highlights and presented within an imported cream linen wrapping format." },
-            { id: "lb-13", name: "Coral Infatuation Flawless Presentation", price: 4400, category: "Signature Roses", rating: 4.7, image: "https://images.unsplash.com/photo-1587334206574-351ecdb7babf?auto=format&fit=crop&w=600&q=80", tags: ["Tropical"], desc: "Bold, sun-kissed coral-hued rose selections nested alongside delicate waxflower sprigs and smooth satin ribbon extensions." },
-            { id: "lb-14", name: "The Alabaster Royalty Grand Spray", price: 9500, category: "Mixed Curations", rating: 5.0, image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80", tags: ["Gala Tier"], desc: "A majestic centerpiece structure featuring pure calla lilies, standard white roses, and towering green delphinium stalks." },
-            { id: "lb-15", name: "Vintage Earth Hessian Wrapped Display", price: 3600, category: "Mixed Curations", rating: 4.5, image: "https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80", tags: ["Minimalism"], desc: "Earthy beige and white field flowers bound tightly inside natural jute mesh canvas and organic hemp cordage bindings." },
-            { id: "lb-16", name: "Signature Liebe Luxury Chocolate Pairing Box", price: 2500, category: "Gifts Stems", rating: 4.9, image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80", tags: ["Add-On"], desc: "Artisanal box of premium Swiss truffle assortments, ideal for linking with any luxury bouquet selection." },
-            { id: "lb-17", name: "Scented French Vanilla Atelier Candle", price: 1800, category: "Gifts Stems", rating: 4.8, image: "https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=600&q=80", tags: ["Aroma"], desc: "Hand-poured organic soy wax candle infused with heavy Madagascar vanilla pods and white floral essential oil matrix configurations." },
-            { id: "lb-18", name: "Premium Glass Fluted Display Vase", price: 3000, category: "Gifts Stems", rating: 4.6, image: "https://images.unsplash.com/photo-1587334206574-351ecdb7babf?auto=format&fit=crop&w=600&q=80", tags: ["Crystal Cut"], desc: "Heavy crystal glass base featuring architectural diamond structural facets, specifically scaled to hold signature stem layouts securely." },
-            { id: "lb-19", name: "Blossom Teddy Bear Plus Velvet Set", price: 2200, category: "Gifts Stems", rating: 4.7, image: "https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80", tags: ["Companion"], desc: "Hypoallergenic ultra-plush cream teddy bear element bearing a miniature embroidered rose-petal emblem configuration." },
-            { id: "lb-20", name: "The Imperial Rose Gold Jubilee Sheaf", price: 12000, category: "Luxury Boxes", rating: 5.0, image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80", tags: ["Monumental"], desc: "Our most expansive formulation. 50 select pink and ruby rose stems complete with silk linings inside our premier oversized celebration box chest." }
-        ];
-
-        const ARTISAN_FLOWERS = [
-            { id: "af-rose-red", name: "Premium Red Rose Stem", price: 250 },
-            { id: "af-rose-white", name: "Avalanche White Rose Stem", price: 250 },
-            { id: "af-rose-yellow", name: "Sunny Yellow Rose Stem", price: 200 },
-            { id: "af-rose-pink", name: "Maud Blush Pink Rose Stem", price: 220 },
-            { id: "af-fill-gyp", name: "Baby’s Breath Cloud Lace Filler", price: 150 },
-            { id: "af-fill-euc", name: "Eucalyptus Fan Greenery Sprig", price: 120 }
-        ];
-
-        const ARTISAN_WRAPS = [
-            { id: "aw-black", name: "Signature Sleek Midnight Black Wrap Sheets", price: 400 },
-            { id: "aw-pink", name: "Monochromatic Liebe Hot Pink Luxury Sheet Wrap", price: 350 },
-            { id: "aw-jute", name: "Eco-Friendly Hessian Jute Woven Fabric Mesh", price: 380 },
-            { id: "aw-clear", name: "Frost-White High-Clear Tulle Veil Layer wrap", price: 250 }
-        ];
-
-        let currentBasketState = [];
-        let artisanFlowerSelections = {};
-        let selectedArtisanWrapId = ARTISAN_WRAPS[0].id;
-
-        window.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("current-year-placeholder").innerText = new Date().getFullYear();
-            renderCatalogDisplay(CATALOG_PRODUCTS);
-            initializeArtisanFormulatorUI();
-            evaluateMasterAccountingTotals();
-        });
-
-        function renderCatalogDisplay(itemsList) {
-            const gridContainer = document.getElementById("catalog-grid");
-            const emptySlate = document.getElementById("catalog-empty-slate");
-            const filterCounter = document.getElementById("filtered-count");
-            
-            filterCounter.innerText = itemsList.length;
-            gridContainer.innerHTML = "";
-            
-            if (itemsList.length === 0) {
-                gridContainer.classList.add("hidden");
-                emptySlate.classList.remove("hidden");
-                return;
-            }
-            
-            gridContainer.classList.remove("hidden");
-            emptySlate.classList.add("hidden");
-
-            itemsList.forEach(item => {
-                const card = document.createElement("div");
-                card.className = "bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-stone-200/60 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group card-hover relative";
-                
-                let tagsHtml = "";
-                item.tags.slice(0, 1).forEach(tg => {
-                    tagsHtml += `<span class="bg-white/95 backdrop-blur-xs text-stone-900 font-bold text-[8px] sm:text-[9px] tracking-widest uppercase px-1.5 py-0.5 rounded shadow-2xs">${tg}</span>`;
-                });
-
-                card.innerHTML = `
-                    <div class="relative aspect-square bg-stone-50 overflow-hidden">
-                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover object-center img-zoom" loading="lazy">
-                        <div class="absolute inset-0 bg-stone-950/10 group-hover:bg-stone-950/0 transition-colors duration-300"></div>
-                        <div class="absolute top-2 left-2 flex flex-col gap-1 z-10">${tagsHtml}</div>
-                        <button onclick="toggleItemFavorite('${item.id}', this)" class="absolute top-2 right-2 h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-white/95 backdrop-blur-xs text-stone-400 hover:text-rose-700 transition-colors shadow-2xs flex items-center justify-center z-10 cursor-pointer">
-                            <i class="fa-regular fa-heart text-[10px] sm:text-xs"></i>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-5 flex-1 flex flex-col justify-between space-y-2 sm:space-y-4">
-                        <div class="space-y-0.5 sm:space-y-1">
-                            <div class="flex items-center justify-between text-[8px] sm:text-[10px] font-bold text-stone-400 uppercase tracking-wider">
-                                <span class="truncate max-w-[70%]">${item.category}</span>
-                                <span class="text-amber-500 font-mono flex items-center gap-0.5"><i class="fa-solid fa-star text-[8px]"></i>${item.rating.toFixed(1)}</span>
-                            </div>
-                            <h4 class="font-serif font-bold text-stone-900 text-sm sm:text-base tracking-wide group-hover:text-rose-950 transition-colors line-clamp-1">${item.name}</h4>
-                            <p class="text-stone-500 text-[10px] sm:text-[11px] leading-relaxed line-clamp-2 font-light hidden sm:block">${item.desc}</p>
-                        </div>
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between pt-2 border-t border-stone-100 gap-2">
-                            <div>
-                                <span class="text-[7px] uppercase tracking-widest text-stone-400 block font-bold sm:hidden">Price</span>
-                                <span class="font-mono text-xs sm:text-base font-black text-stone-900">KSH ${item.price.toLocaleString()}</span>
-                            </div>
-                            <button onclick="injectProductObjectToBasket('${item.id}')" class="w-full sm:w-auto px-2 py-1.5 sm:px-3.5 sm:py-2 bg-stone-950 hover:bg-rose-900 text-white rounded-md text-[10px] sm:text-[11px] font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs">
-                                <i class="fa-solid fa-plus text-[8px]"></i>
-                                <span>Append</span>
-                            </button>
-                        </div>
-                    </div>
-                `;
-                gridContainer.appendChild(card);
-            });
-        }
-
-        function initializeArtisanFormulatorUI() {
-            const stemsZone = document.getElementById("stem-builder-injection-zone");
-            const wrapsZone = document.getElementById("wrap-style-injection-zone");
-            
-            stemsZone.innerHTML = "";
-            wrapsZone.innerHTML = "";
-
-            ARTISAN_FLOWERS.forEach(fl => {
-                artisanFlowerSelections[fl.id] = 0;
-                const block = document.createElement("div");
-                block.className = "p-3 sm:p-4 rounded-xl border border-stone-200/80 bg-stone-50/40 flex items-center justify-between transition-all duration-300";
-                block.id = `artisan-stem-block-${fl.id}`;
-                block.innerHTML = `
-                    <div class="pr-2">
-                        <p class="text-xs font-bold text-stone-800 leading-tight">${fl.name}</p>
-                        <p class="text-[10px] font-mono text-stone-400 mt-0.5">KSH ${fl.price}/stem</p>
-                    </div>
-                    <div class="flex items-center gap-2 bg-white border border-stone-200 shadow-2xs p-1 rounded-lg shrink-0">
-                        <button type="button" onclick="adjustArtisanStemCount('${fl.id}', -1)" class="h-6 w-6 rounded bg-stone-50 hover:bg-stone-100 text-stone-500 font-bold text-xs flex items-center justify-center cursor-pointer select-none">-</button>
-                        <span id="artisan-stem-counter-${fl.id}" class="font-mono text-xs font-bold text-stone-800 w-4 text-center">0</span>
-                        <button type="button" onclick="adjustArtisanStemCount('${fl.id}', 1)" class="h-6 w-6 rounded bg-stone-50 hover:bg-stone-100 text-stone-500 font-bold text-xs flex items-center justify-center cursor-pointer select-none">+</button>
-                    </div>
-                `;
-                stemsZone.appendChild(block);
-            });
-
-            ARTISAN_WRAPS.forEach((wr, index) => {
-                const label = document.createElement("label");
-                label.className = `flex items-center justify-between p-3 sm:p-4 rounded-xl border transition-all duration-300 cursor-pointer ${
-                    index === 0 ? 'border-rose-900 bg-rose-50/20 ring-1 ring-rose-900/40' : 'border-stone-200 hover:bg-stone-50/50'
-                }`;
-                label.id = `artisan-wrap-label-${wr.id}`;
-                label.innerHTML = `
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <input type="radio" name="artisanWrappingGroup" value="${wr.id}" ${index === 0 ? 'checked' : ''} onchange="alterArtisanWrappingMaterial('${wr.id}')" class="accent-rose-900 h-4 w-4 cursor-pointer shrink-0">
-                        <span class="text-xs font-semibold text-stone-700 truncate">${wr.name}</span>
-                    </div>
-                    <span class="text-[11px] font-mono font-bold text-stone-400 shrink-0 pl-2">+ KSH ${wr.price}</span>
-                `;
-                wrapsZone.appendChild(label);
-            });
-
-            evaluateArtisanBlueprintLiveMetrics();
-        }
-
-        function filterCatalog() {
-            const searchVal = document.getElementById("search-input").value.toLowerCase().trim();
-            const categoryVal = document.getElementById("category-filter").value;
-            const sortVal = document.getElementById("sort-filter").value;
-
-            let outputArray = [...CATALOG_PRODUCTS];
-
-            if (searchVal !== "") {
-                outputArray = outputArray.filter(prod => {
-                    return prod.name.toLowerCase().includes(searchVal) || 
-                           prod.desc.toLowerCase().includes(searchVal) || 
-                           prod.category.toLowerCase().includes(searchVal);
-                });
-            }
-
-            if (categoryVal !== "All") {
-                outputArray = outputArray.filter(prod => prod.category === categoryVal);
-            }
-
-            if (sortVal === "price-asc") {
-                outputArray.sort((a, b) => a.price - b.price);
-            } else if (sortVal === "price-desc") {
-                outputArray.sort((a, b) => b.price - a.price);
-            } else if (sortVal === "rating") {
-                outputArray.sort((a, b) => b.rating - a.rating);
-            }
-
-            renderCatalogDisplay(outputArray);
-        }
-
-        function resetFilters() {
-            document.getElementById("search-input").value = "";
-            document.getElementById("category-filter").value = "All";
-            document.getElementById("sort-filter").value = "default";
-            renderCatalogDisplay(CATALOG_PRODUCTS);
-        }
-
-        function injectProductObjectToBasket(productId) {
-            const targetProduct = CATALOG_PRODUCTS.find(p => p.id === productId);
-            if (!targetProduct) return;
-
-            const existingNode = currentBasketState.find(item => item.id === productId && !item.isCustomConfigured);
-            if (existingNode) {
-                existingNode.selectedQuantity += 1;
-            } else {
-                currentBasketState.push({
-                    id: targetProduct.id,
-                    name: targetProduct.name,
-                    unitPrice: targetProduct.price,
-                    imageRef: targetProduct.image,
-                    isCustomConfigured: false,
-                    selectedQuantity: 1,
-                    metaDetails: null
-                });
-            }
-
-            evaluateMasterAccountingTotals();
-            triggerGlowPulseNotification();
-        }
-
-        function adjustBasketItemQuantity(uniqueItemId, isCustomFlag, quantityDelta) {
-            const itemMatch = currentBasketState.find(item => item.id === uniqueItemId && item.isCustomConfigured === isCustomFlag);
-            if (!itemMatch) return;
-
-            itemMatch.selectedQuantity += quantityDelta;
-            if (itemMatch.selectedQuantity <= 0) {
-                currentBasketState = currentBasketState.filter(item => !(item.id === uniqueItemId && item.isCustomConfigured === isCustomFlag));
-            }
-
-            evaluateMasterAccountingTotals();
-        }
-
-        function ejectItemEntirelyFromBasket(uniqueItemId, isCustomFlag) {
-            currentBasketState = currentBasketState.filter(item => !(item.id === uniqueItemId && item.isCustomConfigured === isCustomFlag));
-            evaluateMasterAccountingTotals();
-        }
-
-        function evaluateMasterAccountingTotals() {
-            let totalItemUnitsCount = 0;
-            let financialSubtotalAccumulator = 0;
-
-            const sideLedgerZone = document.getElementById("calc-ledger-stack");
-            const drawerItemsZone = document.getElementById("drawer-items-container");
-            const mainWallBasketZone = document.getElementById("basket-items-container");
-
-            sideLedgerZone.innerHTML = "";
-            drawerItemsZone.innerHTML = "";
-            mainWallBasketZone.innerHTML = "";
-
-            currentBasketState.forEach(node => {
-                totalItemUnitsCount += node.selectedQuantity;
-                const incrementalProductCost = node.unitPrice * node.selectedQuantity;
-                financialSubtotalAccumulator += incrementalProductCost;
-
-                const ledgerRow = document.createElement("div");
-                ledgerRow.className = "flex items-center justify-between text-[11px] text-stone-400 font-light border-b border-stone-900/40 pb-1.5";
-                ledgerRow.innerHTML = `
-                    <span class="truncate max-w-[180px] text-stone-300">${node.name} <span class="text-rose-400 font-mono font-bold">x${node.selectedQuantity}</span></span>
-                    <span class="font-mono text-stone-200">KSH ${incrementalProductCost.toLocaleString()}</span>
-                `;
-                sideLedgerZone.appendChild(ledgerRow);
-
-                const basketItemCardHtml = `
-                    <div class="flex items-start gap-3 p-3 rounded-xl border border-stone-200/60 bg-stone-50/50 relative group shadow-2xs">
-                        <div class="h-14 w-14 rounded-lg overflow-hidden bg-stone-100 shrink-0">
-                            <img src="${node.imageRef}" alt="${node.name}" class="w-full h-full object-cover">
-                        </div>
-                        <div class="flex-1 min-w-0 space-y-1">
-                            <h5 class="text-xs font-bold text-stone-900 truncate pr-5 leading-tight">${node.name}</h5>
-                            ${node.isCustomConfigured ? `<p class="text-[9px] text-rose-900 font-medium bg-rose-50/50 px-1.5 py-0.5 rounded w-max">${node.metaDetails.wrapStyleName}</p>` : `<p class="text-[10px] text-stone-400">Atelier Standard Ready</p>`}
-                            <div class="flex items-center justify-between pt-1">
-                                <div class="flex items-center gap-1.5 bg-white border border-stone-200 rounded-md p-0.5 shadow-2xs">
-                                    <button onclick="adjustBasketItemQuantity('${node.id}', ${node.isCustomConfigured}, -1)" class="h-5 w-5 rounded text-[10px] font-bold flex items-center justify-center hover:bg-stone-100 cursor-pointer text-stone-500 select-none">-</button>
-                                    <span class="font-mono text-xs font-black text-stone-800 w-4 text-center">${node.selectedQuantity}</span>
-                                    <button onclick="adjustBasketItemQuantity('${node.id}', ${node.isCustomConfigured}, 1)" class="h-5 w-5 rounded text-[10px] font-bold flex items-center justify-center hover:bg-stone-100 cursor-pointer text-stone-500 select-none">+</button>
-                                </div>
-                                <span class="font-mono text-xs font-bold text-stone-900">KSH ${incrementalProductCost.toLocaleString()}</span>
-                            </div>
-                        </div>
-                        <button onclick="ejectItemEntirelyFromBasket('${node.id}', ${node.isCustomConfigured})" class="absolute top-2.5 right-2.5 text-stone-300 hover:text-rose-700 transition-colors cursor-pointer text-xs p-1" title="Purge Item"><i class="fa-solid fa-trash-can"></i></button>
-                    </div>
-                `;
-
-                mainWallBasketZone.insertAdjacentHTML("beforeend", basketItemCardHtml);
-                drawerItemsZone.insertAdjacentHTML("beforeend", basketItemCardHtml);
-            });
-
-            if (currentBasketState.length === 0) {
-                const emptyNoticeHtml = `
-                    <div class="text-center py-12 space-y-2">
-                        <i class="fa-solid fa-box-open text-stone-300 text-2xl block"></i>
-                        <p class="text-xs text-stone-400 font-light italic">Basket is completely empty.</p>
-                    </div>
-                `;
-                mainWallBasketZone.innerHTML = emptyNoticeHtml;
-                drawerItemsZone.innerHTML = emptyNoticeHtml;
-                sideLedgerZone.innerHTML = `<p class="text-stone-600 text-xs italic py-2 text-center">Awaiting item injections...</p>`;
-            }
-
-            document.getElementById("header-cart-badge").innerText = totalItemUnitsCount;
-            document.getElementById("basket-count-badge").innerText = `${totalItemUnitsCount} Items`;
-            document.getElementById("drawer-cart-badge").innerText = totalItemUnitsCount;
-
-            const fullyFormattedTotalText = `KSH ${financialSubtotalAccumulator.toLocaleString()}`;
-            document.getElementById("calc-grand-total").innerText = fullyFormattedTotalText;
-            document.getElementById("drawer-grand-total").innerText = fullyFormattedTotalText;
-
-            const actionButton = document.getElementById("checkout-action-btn");
-            const drawerActionButton = document.getElementById("drawer-checkout-btn");
-            const calcStateBadge = document.getElementById("calc-state-badge");
-
-            if (financialSubtotalAccumulator > 0) {
-                actionButton.removeAttribute("disabled");
-                drawerActionButton.removeAttribute("disabled");
-                calcStateBadge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Dynamic Invoice Calculated`;
-            } else {
-                actionButton.setAttribute("disabled", "true");
-                drawerActionButton.setAttribute("disabled", "true");
-                calcStateBadge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span> Awaiting Components Selection`;
-            }
-        }
-
-        function adjustArtisanStemCount(stemId, calculationDelta) {
-            const theoreticalTotalCount = artisanFlowerSelections[stemId] + calculationDelta;
-            if (theoreticalTotalCount < 0) return;
-
-            artisanFlowerSelections[stemId] = theoreticalTotalCount;
-            document.getElementById(`artisan-stem-counter-${stemId}`).innerText = theoreticalTotalCount;
-
-            const TargetContainerBlock = document.getElementById(`artisan-stem-block-${stemId}`);
-            if (theoreticalTotalCount > 0) {
-                TargetContainerBlock.classList.remove("border-stone-200/80", "bg-stone-50/40");
-                TargetContainerBlock.classList.add("border-rose-200", "bg-rose-50/20");
-            } else {
-                TargetContainerBlock.classList.remove("border-rose-200", "bg-rose-50/20");
-                TargetContainerBlock.classList.add("border-stone-200/80", "bg-stone-50/40");
-            }
-
-            evaluateArtisanBlueprintLiveMetrics();
-        }
-
-        function alterArtisanWrappingMaterial(wrapId) {
-            selectedArtisanWrapId = wrapId;
-            
-            ARTISAN_WRAPS.forEach(wr => {
-                const targetLabelElement = document.getElementById(`artisan-wrap-label-${wr.id}`);
-                if (wr.id === wrapId) {
-                    targetLabelElement.classList.remove("border-stone-200", "hover:bg-stone-50/50");
-                    targetLabelElement.classList.add("border-rose-900", "bg-rose-50/20", "ring-1", "ring-rose-900/40");
-                } else {
-                    targetLabelElement.classList.remove("border-rose-900", "bg-rose-50/20", "ring-1", "ring-rose-900/40");
-                    targetLabelElement.classList.add("border-stone-200", "hover:bg-stone-50/50");
-                }
-            });
-
-            evaluateArtisanBlueprintLiveMetrics();
-        }
-
-        function evaluateArtisanBlueprintLiveMetrics() {
-            let computationalArtisanTotal = 0;
-            const stemsManifestZone = document.getElementById("blueprint-stems-manifest");
-            stemsManifestZone.innerHTML = "";
-
-            let hasStemsSelected = false;
-
-            Object.entries(artisanFlowerSelections).forEach(([id, qty]) => {
-                if (qty <= 0) return;
-                hasStemsSelected = true;
-                const referenceObject = ARTISAN_FLOWERS.find(f => f.id === id);
-                if (referenceObject) {
-                    const rowCost = referenceObject.price * qty;
-                    computationalArtisanTotal += rowCost;
-
-                    const rowNode = document.createElement("div");
-                    rowNode.className = "flex items-center justify-between text-stone-300 font-light";
-                    rowNode.innerHTML = `
-                        <span>${referenceObject.name} <span class="text-rose-400 font-bold font-mono">x${qty}</span></span>
-                        <span class="font-mono text-white">KSH ${rowCost.toLocaleString()}</span>
-                    `;
-                    stemsManifestZone.appendChild(rowNode);
-                }
-            });
-
-            if (!hasStemsSelected) {
-                stemsManifestZone.innerHTML = `<p class="text-stone-500 italic text-[11px] py-2 text-center">Select individual flower stems leftward to start configuration architecture...</p>`;
-            }
-
-            const activeWrapObject = ARTISAN_WRAPS.find(w => w.id === selectedArtisanWrapId);
-            if (activeWrapObject) {
-                computationalArtisanTotal += activeWrapObject.price;
-                document.getElementById("blueprint-wrap-label").innerText = activeWrapObject.name;
-            }
-
-            document.getElementById("blueprint-total-label").innerText = `KSH ${computationalArtisanTotal.toLocaleString()}`;
-            return computationalArtisanTotal;
-        }
-
-        function injectCustomArtisanBouquetToCart() {
-            const activeStemsSum = Object.values(artisanFlowerSelections).reduce((acc, qty) => acc + qty, 0);
-            if (activeStemsSum === 0) {
-                alert("Kindly designate at least 1 functional flower stem metric to build an Artisan Bouquet arrangement configuration!");
-                return;
-            }
-
-            const activeWrapObj = ARTISAN_WRAPS.find(w => w.id === selectedArtisanWrapId);
-            const computedCostValue = evaluateArtisanBlueprintLiveMetrics();
-            const cardMessageContent = document.getElementById("custom-card-text").value.trim();
-
-            const uniqueTimestampId = `artisan-custom-bundle-${Date.now()}`;
-            
-            const customPayload = {
-                id: uniqueTimestampId,
-                name: "Artisan Bespoke Designed Bouquet",
-                unitPrice: computedCostValue,
-                imageRef: "https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80",
-                isCustomConfigured: true,
-                selectedQuantity: 1,
-                metaDetails: {
-                    wrapStyleName: activeWrapObj.name,
-                    giftCardText: cardMessageContent || "No greeting message attached.",
-                    stemsBreakdown: { ...artisanFlowerSelections }
-                }
-            };
-
-            currentBasketState.push(customPayload);
-            evaluateMasterAccountingTotals();
-
-            ARTISAN_FLOWERS.forEach(fl => {
-                artisanFlowerSelections[fl.id] = 0;
-                document.getElementById(`artisan-stem-counter-${fl.id}`).innerText = 0;
-                const stemBlock = document.getElementById(`artisan-stem-block-${fl.id}`);
-                stemBlock.classList.remove("border-rose-200", "bg-rose-50/20");
-                stemBlock.classList.add("border-stone-200/80", "bg-stone-50/40");
-            });
-
-            document.getElementById("custom-card-text").value = "";
-            alterArtisanWrappingMaterial(ARTISAN_WRAPS[0].id);
-            evaluateArtisanBlueprintLiveMetrics();
-
-            toggleCartDrawer(true);
-            triggerGlowPulseNotification();
-        }
-
-        function toggleCartDrawer(shouldOpenState) {
-            const drawerElement = document.getElementById("cart-drawer");
-            const targetSlideInnerContainer = drawerElement.querySelector(".absolute.inset-y-0.right-0");
-            
-            if (shouldOpenState) {
-                drawerElement.classList.remove("pointer-events-none", "opacity-0");
-                targetSlideInnerContainer.classList.remove("translate-x-full");
-            } else {
-                drawerElement.classList.add("pointer-events-none", "opacity-0");
-                targetSlideInnerContainer.classList.add("translate-x-full");
-            }
-        }
-
-        function toggleMobileNav(shouldOpenState) {
-            const navElement = document.getElementById("mobile-nav");
-            const innerPanel = navElement.querySelector(".absolute.inset-y-0.right-0");
-            
-            if (shouldOpenState) {
-                navElement.classList.remove("pointer-events-none", "opacity-0");
-                innerPanel.classList.remove("translate-x-full");
-            } else {
-                navElement.classList.add("pointer-events-none", "opacity-0");
-                innerPanel.classList.add("translate-x-full");
-            }
-        }
-
-        function toggleItemFavorite(productId, elementNode) {
-            const innerIcon = elementNode.querySelector("i");
-            if (innerIcon.classList.contains("fa-regular")) {
-                innerIcon.className = "fa-solid fa-heart text-rose-600 animate-bounce";
-                elementNode.classList.add("text-rose-600");
-            } else {
-                innerIcon.className = "fa-regular fa-heart text-xs";
-                elementNode.classList.remove("text-rose-600");
-            }
-        }
-
-        function triggerGlowPulseNotification() {
-            const floatingBagTriggers = [
-                document.getElementById("checkout-action-btn"),
-                document.getElementById("header-cart-badge")
-            ];
-            floatingBagTriggers.forEach(el => {
-                if (el) {
-                    el.classList.add("scale-105", "ring-4", "ring-rose-500/30");
-                    setTimeout(() => el.classList.remove("scale-105", "ring-4", "ring-rose-500/30"), 400);
-                }
-            });
-        }
-
-        function processWhatsAppCheckout() {
-            if (currentBasketState.length === 0) return;
-
-            let invoiceTextBody = `*✨ NEW ARTIFACT BILL DETAILED INVOICE | LIEBE & ROSES DIGITAL ATELIER ✨*\n\n`;
-            let operationalIndex = 1;
-            let transactionSubtotalValue = 0;
-
-            currentBasketState.forEach(node => {
-                const computedRowSum = node.unitPrice * node.selectedQuantity;
-                transactionSubtotalValue += computedRowSum;
-
-                invoiceTextBody += `*${operationalIndex}. ${node.name}* (x${node.selectedQuantity})\n`;
-                
-                if (node.isCustomConfigured) {
-                    invoiceTextBody += `   _Lab Specifications Metrics:_\n`;
-                    Object.entries(node.metaDetails.stemsBreakdown).forEach(([sid, qty]) => {
-                        if (qty > 0) {
-                            const flRef = ARTISAN_FLOWERS.find(f => f.id === sid);
-                            invoiceTextBody += `   • ${flRef.name}: ${qty} individual stems\n`;
-                        }
-                    });
-                    invoiceTextBody += `   • Wrapping Style Sheet: ${node.metaDetails.wrapStyleName}\n`;
-                    invoiceTextBody += `   • Calligraphy Gift Card: "${node.metaDetails.giftCardText}"\n`;
-                } else {
-                    invoiceTextBody += `   • Catalog Category: Standard Production Collection Ready\n`;
-                }
-
-                invoiceTextBody += `   Line Valuation Price Amount: KSH ${computedRowSum.toLocaleString()}\n\n`;
-                operationalIndex++;
-            });
-
-            invoiceTextBody += `--------------------------------------------\n`;
-            invoiceTextBody += `*🛒 AGGREGATE COMBINED TOTAL: KSH ${transactionSubtotalValue.toLocaleString()}*\n`;
-            invoiceTextBody += `--------------------------------------------\n\n`;
-            invoiceTextBody += `📍 _Kindly review current inventory availability buffers, lock this configuration invoice breakdown schema, and route field delivery dispatch vehicles to our location coordinates._\n\n`;
-            invoiceTextBody += `⚡ _Dispatched Securely via Liebe & Roses Advanced Accounting Client Portal._`;
-
-            const operationalTargetPhone = "+254726201738";
-            const cleanEncodedUrlPath = encodeURIComponent(invoiceTextBody);
-            
-            window.open(`https://wa.me/${operationalTargetPhone}?text=${cleanEncodedUrlPath}`, "_blank");
-        }
-    </script>
-</body>
-</html>
+export interface Product {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  rating: number;
+  reviewsCount: number;
+  stemCount: string;
+  image: string;
+  secondaryImage: string;
+  isBestSeller?: boolean;
+  isNew?: boolean;
+  description: string;
+  stemDetails: string[];
+  careInstructions: string[];
+  dimensions: string;
+  vesselOption: string;
+}
+
+export const PRODUCTS: Product[] = [
+  {
+    id: "lbr-001",
+    name: "Der Berliner Frühling",
+    category: "Signature Bouquets",
+    price: 125,
+    rating: 4.9,
+    reviewsCount: 42,
+    stemCount: "24 Stems",
+    image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=1200&auto=format&fit=crop",
+    secondaryImage: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?q=80&w=1200&auto=format&fit=crop",
+    isBestSeller: true,
+    isNew: false,
+    description: "An evocative arrangement of blush French garden roses, coral garden peonies, and delicate wild ranunculus nestled amongst silver dollar eucalyptus.",
+    stemDetails: [
+      "8x Heritage Coral Peonies",
+      "6x Blush French Garden Roses",
+      "5x White Clooney Ranunculus",
+      "5x Fresh Italian Olive Sprigs"
+    ],
+    careInstructions: [
+      "Trim 1-2 cm from stems at a 45-degree angle upon arrival",
+      "Place in cool, fresh water with the included botanical nutrient solution",
+      "Change water every two days and keep away from direct heat"
+    ],
+    dimensions: "Height: 55cm | Width: 40cm",
+    vesselOption: "Hand-blown Smoked Fluted Glass Vase (Optional +€35)"
+  },
+  {
+    id: "lbr-002",
+    name: "L'Aube Blanche",
+    category: "Monochromatic",
+    price: 140,
+    rating: 5.0,
+    reviewsCount: 38,
+    stemCount: "28 Stems",
+    image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1200&auto=format&fit=crop",
+    secondaryImage: "https://images.unsplash.com/photo-1520763185298-1b434c919102?q=80&w=1200&auto=format&fit=crop",
+    isBestSeller: true,
+    isNew: true,
+    description: "A pure, sculptural monochromatic composition featuring pure white garden roses, ivory anemones, and white Dutch double tulips with architectural stems.",
+    stemDetails: [
+      "10x Pure White O'Hara Roses",
+      "8x White Black-Center Anemones",
+      "6x Ivory Double Dutch Tulips",
+      "4x White Lisianthus Stems"
+    ],
+    careInstructions: [
+      "Cut stems diagonally and place in cold water",
+      "Tulips will continue to elongate in water over 3-4 days",
+      "Remove leaves below the water line"
+    ],
+    dimensions: "Height: 60cm | Width: 45cm",
+    vesselOption: "Matte White Ceramic Cylindrical Vessel (Optional +€40)"
+  },
+  {
+    id: "lbr-003",
+    name: "Jardin de Provence",
+    category: "Seasonal Atelier",
+    price: 110,
+    rating: 4.8,
+    reviewsCount: 29,
+    stemCount: "22 Stems",
+    image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=1200&auto=format&fit=crop",
+    secondaryImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
+    isBestSeller: false,
+    isNew: true,
+    description: "Inspired by late summer afternoons in Southern France. Features organic garden lavender, field chamomile, wild blue thistles, and pale lilacs.",
+    stemDetails: [
+      "6x French Lavender Sprigs",
+      "6x Chamomile Stems",
+      "4x Blue Eryngium Thistles",
+      "6x Pale Purple Delphinium Stems"
+    ],
+    careInstructions: [
+      "Enjoys medium daylight avoiding harsh midday sun",
+      "Mist foliage lightly once per day",
+      "Trim stems every three days for optimal hydration"
+    ],
+    dimensions: "Height: 50cm | Width: 38cm",
+    vesselOption: "Raw Sandstone Ribbed Pot (Optional +€30)"
+  },
+  {
+    id: "lbr-004",
+    name: "Botanique Minimaliste",
+    category: "Vase Arrangements",
+    price: 165,
+    rating: 4.9,
+    reviewsCount: 51,
+    stemCount: "18 Stems",
+    image: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?q=80&w=1200&auto=format&fit=crop",
+    secondaryImage: "https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1200&auto=format&fit=crop",
+    isBestSeller: true,
+    isNew: false,
+    description: "Architectural minimalism in its purest form. Cream garden roses offset by long structural Italian olive branches in a handcrafted clear crystal cylinder.",
+    stemDetails: [
+      "8x Cream Ecuadorian Roses",
+      "6x Long Italian Olive Stems",
+      "4x Silver Dollar Eucalyptus"
+    ],
+    careInstructions: [
+      "Vase is included pre-filled with conditioned mineral water",
+      "Keep away from ripening fruit and drafty windows"
+    ],
+    dimensions: "Height: 65cm | Width: 50cm",
+    vesselOption: "Includes Handmade Heavy-Weight Crystal Cylinder"
+  },
+  {
+    id: "lbr-005",
+    name: "Sinfonie d'Automne",
+    category: "Seasonal Atelier",
+    price: 135,
+    rating: 4.7,
+    reviewsCount: 24,
+    stemCount: "26 Stems",
+    image: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=1200&auto=format&fit=crop",
+    secondaryImage: "https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?q=80&w=1200&auto=format&fit=crop",
+    isBestSeller: false,
+    isNew: true,
+    description: "Rich textural layers of dusky buttercup ranunculus, apricot garden carnations, wild spray roses, and dried seed pods.",
+    stemDetails: [
+      "8x Apricot Ranunculus",
+      "6x Dusky Peach Spray Roses",
+      "6x Garden Carnations",
+      "6x Textural Poppy Seed Pods"
+    ],
+    careInstructions: [
+      "Trim stem tips every two days",
+      "Display in a cool area with ambient daylight"
+    ],
+    dimensions: "Height: 52cm | Width: 42cm",
+    vesselOption: "Terracotta Earth Vase (Optional +€35)"
+  },
+  {
+    id: "lbr-006",
+    name: "L'Eucalyptus Structural",
+    category: "Monochromatic",
+    price: 95,
+    rating: 4.9,
+    reviewsCount: 19,
+    stemCount: "15 Stems",
+    image: "data:image/webp;base64,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",
+    secondaryImage: "https://images.unsplash.com/photo-1591886960571-74d43a9d4166?q=80&w=1200&auto=format&fit=crop",
+    isBestSeller: false,
+    isNew: false,
+    description: "A calming green architectural arrangement of fresh silver dollar eucalyptus, seeded eucalyptus, and pale green hydrangea heads.",
+    stemDetails: [
+      "5x Silver Dollar Eucalyptus",
+      "5x Seeded Eucalyptus Stems",
+      "5x Antique Green Hydrangeas"
+    ],
+    careInstructions: [
+      "Hydrangeas require deep water immersion at stem base",
+      "Mist leaves daily for clean natural aroma"
+    ],
+    dimensions: "Height: 70cm | Width: 45cm",
+    vesselOption: "Tall Frosted Glass Column (Optional +€28)"
+  },
+  {
+    id: "lbr-007",
+    name: "Eternité Sèche",
+    category: "Dried & Preserved",
+    price: 85,
+    rating: 4.8,
+    reviewsCount: 33,
+    stemCount: "16 Stems",
+    image: "https://images.unsplash.com/photo-1533616688419-b7a585564566?q=80&w=1200&auto=format&fit=crop",
+    secondaryImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
+    isBestSeller: true,
+    isNew: false,
+    description: "Carefully dried in our Berlin atelier. Natural pampas grass, preserved white statice, dried lunaria, and bleached palm spears that last for years.",
+    stemDetails: [
+      "4x Natural Plume Pampas",
+      "4x Preserved White Statice",
+      "4x Bleached Palm Leaves",
+      "4x Lunaria Translucent Stems"
+    ],
+    careInstructions: [
+      "Requires NO water",
+      "Keep away from direct high humidity",
+      "Lightly spray with hairspray once per season to maintain shape"
+    ],
+    dimensions: "Height: 65cm | Width: 35cm",
+    vesselOption: "Speckled Stoneware Pedestal (Optional +€32)"
+  },
+  {
+    id: "lbr-008",
+    name: "Tulipes d'Amsterdam",
+    category: "Signature Bouquets",
+    price: 105,
+    rating: 4.9,
+    reviewsCount: 45,
+    stemCount: "30 Stems",
+    image: "https://images.unsplash.com/photo-1520763185298-1b434c919102?q=80&w=1200&auto=format&fit=crop",
+    secondaryImage: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1200&auto=format&fit=crop",
+    isBestSeller: false,
+    isNew: true,
+    description: "Directly sourced from sustainable Dutch flower growers. Crisp white double tulips paired with pale sage foliage in clean alignment.",
+    stemDetails: [
+      "20x Crisp White Double Tulips",
+      "10x Fresh Salal & Eucalyptus Foliage"
+    ],
+    careInstructions: [
+      "Tulips naturally curve towards light sources; rotate vase daily",
+      "Keep in cool room temperatures"
+    ],
+    dimensions: "Height: 48cm | Width: 35cm",
+    vesselOption: "Clear Low Glass Sphere (Optional +€25)"
+  }
+];
+
+export const CATEGORIES = [
+  "All",
+  "Signature Bouquets",
+  "Monochromatic",
+  "Seasonal Atelier",
+  "Vase Arrangements",
+  "Dried & Preserved"
+];
+
+export const INSTAGRAM_PHOTOS = [
+  {
+    id: "insta-1",
+    url: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800&auto=format&fit=crop",
+    title: "Morning light in the Berlin Atelier",
+    likes: "1,240"
+  },
+  {
+    id: "insta-2",
+    url: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=800&auto=format&fit=crop",
+    title: "Heritage peonies selected fresh at dawn",
+    likes: "2,810"
+  },
+  {
+    id: "insta-3",
+    url: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=800&auto=format&fit=crop",
+    title: "Bespoke wedding installation in Paris",
+    likes: "3,150"
+  },
+  {
+    id: "insta-4",
+    url: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=800&auto=format&fit=crop",
+    title: "Seasonal stem selection",
+    likes: "1,980"
+  }
+];
